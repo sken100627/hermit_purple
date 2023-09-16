@@ -76,3 +76,10 @@ group :production do
 end
 
 gem 'devise'
+
+gem 'bootstrap', '~> 5.2.3'
+
+gem 'jquery-rails'
+
+gem 'libv8', '~> 7.3', '>= 7.3.492.27.1'
+gem 'mini_racer'
