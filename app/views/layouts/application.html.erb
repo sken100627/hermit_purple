@@ -15,7 +15,7 @@
       
       <div class="container-fluid d-flex align-items-center">
         <h1 class="d-flex align-items-center fs-4 text-white mb-0 ms-2">
-          <a class="text-decoration-none" href="/">Hermit Purple</a>
+          <a class="text-decoration-none link-light" href="/">Hermit Purple</a>
         </h1>
         <% if user_signed_in? %>
           <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "ms-auto link-light text-decoration-none" %>
