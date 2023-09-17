@@ -24,4 +24,11 @@ body {
   border-top-right-radius: 0;
 }
 
+.bg-purple {
+  background-color: #B384FF;
+}
 
+.hermit-purple-icon {
+  width: 10vw;
+  margin-right: 10vw;
+}

@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <header class="bd-header bg-purple py-3 d-flex align-items-stretch border-bottom border-dark">
+      
+      <div class="container-fluid d-flex align-items-center">
+        <h1 class="d-flex align-items-center fs-4 text-white mb-0 ms-2">
+          <a class="text-decoration-none" href="/">Hermit Purple</a>
+        </h1>
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "ms-auto link-light text-decoration-none" %>
+        <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: "ms-auto link-light text-decoration-none" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "ms-3 link-light text-decoration-none" %>
+        <% end %>
+      </div>
+
+    </header>
+    
     <%= yield %>
   </body>
 </html>
