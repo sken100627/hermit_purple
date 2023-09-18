@@ -39,23 +39,23 @@ body {
 }
 
 .btn-purple {
-  color: #fff;
-  background-color: #B384FF;
-  border-color: #ccc;
+  color: #fff !important;
+  background-color: #B384FF !important;
+  border-color: #ccc !important;
 }
 
 .btn-purple:focus {
-  color: #fff;
-  background-color: #B384FF;
-  border-color: #8c8c8c;
+  color: #fff !important;
+  background-color: #B384FF !important;
+  border-color: #8c8c8c !important;
 }
 .btn-purple:hover {
-  color: #fff;
-  background-color: #B384FF;
-  border-color: #adadad;
+  color: #fff !important;
+  background-color: #B384FF !important;
+  border-color: #adadad !important;
 }
 .btn-purple:active {
-  color: #fff;
-  background-color: #B384FF;
-  border-color: #adadad;
+  color: #fff !important;
+  background-color: #B384FF !important;
+  border-color: #adadad !important;
 }

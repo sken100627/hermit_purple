@@ -2,7 +2,7 @@
   <div class="bg-body-tertiary p-5 rounded">
     <h1>新しいグループを作成しよう</h1>
     <p class="lead">（家族や職場、様々な用途でグループを作成することができます。）</p>
-    <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">Create Group</a>
+    <%= link_to "Create Group", new_group_path, method: :get, class: "btn btn-purple" %>
   </div>
 </div>
 
