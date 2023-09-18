@@ -94,3 +94,8 @@ body {
 .click-upload>p {
   margin-bottom: 15px;
 }
+
+.group-icon {
+  width: 32px;
+  height: 32px;
+}
