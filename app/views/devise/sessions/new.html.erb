@@ -1,13 +1,19 @@
 <div class="form-login w-100 m-auto mt-5">
-  <img class="mb-4" src="../" alt="" width="72" height="57">
+  <%= image_tag "hermit_purple.png", class:"mb-4 hermit-purple-icon" %>
   <h1 class="h3 mb-3 fw-normal">Please login in</h1>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-floating") do |f| %>
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+
+    <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+    </div>
+
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+  
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
 
     <% if devise_mapping.rememberable? %>
       <div class="form-check text-start my-3">
@@ -15,7 +21,7 @@
         <%= f.label :remember_me %>
       </div>
     <% end %>
-      <%= f.submit "Log in", class: "btn btn-primary w-100 py-2" %>
+        <%= f.submit "Log in", class: "btn-purple w-100 py-2" %>
   <% end %>
 
   <%= render "devise/shared/links" %>

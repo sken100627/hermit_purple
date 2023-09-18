@@ -1,26 +1,23 @@
-<div class="form-login w-100 m-auto mt-5">
-  <img class="mb-4" src="../../../assets/images/test_image.png" alt="" width="72" height="57">
+<div class="form-login w-100 h-80 m-auto mt-5">
+  <%= image_tag "hermit_purple.png", class:"mb-4 hermit-purple-icon" %>
   <h1 class="h3 mb-3 fw-normal">Please Sign in</h1>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-floating") do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "form-control" %>
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "form-control", placeholder:"例) ジョナサン・ジョースター" %>
 
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
 
     <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder:"6文字以上の半角英数字" %>
 
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control mb-3" %>
 
-    <%= f.submit "Sign up", class: "btn btn-primary w-100 py-2" %>
+    <%= f.submit "Sign up", class: "btn-purple w-100 py-2" %>
   <% end %>
 
   <%= render "devise/shared/links" %>
