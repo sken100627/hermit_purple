@@ -1,0 +1,39 @@
+<div class="form-group-create w-100 m-auto mt-5">
+  <h1 class="fs-1 mb-3 fw-normal text-center">Create Group</h1>
+
+  <%= form_with model: @group, url: groups_path, local: true do |f| %>
+
+    <div class="mb-3">
+      <div class="weight-bold-text">
+        グループ名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :group_name, class:"form-control", id:"exampleFormControlInput1", placeholder:"例) ジョースター家（必須 40文字まで)", maxlength:"40" %>
+    </div>
+
+    <div class="mb-3">
+      <div class="weight-bold-text">
+        グループ紹介文
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :explanation, class:"form-control", id:"exampleFormControlTextarea1", placeholder:"グループの紹介文（必須 1,000文字まで）例）ジョースター家の探し物はこちらで探せます。" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        グループ画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"group-image" %>
+      </div>
+    </div>
+
+      <%= f.submit "Create Group" ,class:"btn btn-purple mx-auto d-block w-50" %><br />
+      <%=link_to 'Back', root_path, class:"btn btn-purple mx-auto d-block w-50" %>
+
+  <% end %>
+</div>
