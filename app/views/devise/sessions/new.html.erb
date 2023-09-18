@@ -5,8 +5,8 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-floating") do |f| %>
 
     <div class='login-flash-message'>
-      <%= flash[:notice] %>
-      <%= flash[:alert] %>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
     </div>
 
     <%= f.label :email %><br />
