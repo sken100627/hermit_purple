@@ -32,3 +32,25 @@ body {
   width: 10vw;
   margin-right: 10vw;
 }
+
+.btn-purple {
+  color: #fff;
+  background-color: #B384FF;
+  border-color: #ccc;
+}
+
+.btn-purple:focus {
+  color: #fff;
+  background-color: #B384FF;
+  border-color: #8c8c8c;
+}
+.btn-purple:hover {
+  color: #fff;
+  background-color: #B384FF;
+  border-color: #adadad;
+}
+.btn-purple:active {
+  color: #fff;
+  background-color: #B384FF;
+  border-color: #adadad;
+}
