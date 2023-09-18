@@ -59,3 +59,38 @@ body {
   background-color: #B384FF !important;
   border-color: #adadad !important;
 }
+
+.form-group-create {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-group-create {
+  z-index: 2;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+}
