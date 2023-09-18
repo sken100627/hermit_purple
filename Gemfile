@@ -86,3 +86,6 @@ gem 'jquery-rails'
 
 gem 'libv8', '~> 7.3', '>= 7.3.492.27.1'
 gem 'mini_racer'
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
