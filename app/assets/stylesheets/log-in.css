@@ -33,6 +33,11 @@ body {
   height: 57pxs;
 }
 
+.hermit-purple-header-icon {
+  width: 100px; 
+  height: 57pxs;
+}
+
 .btn-purple {
   color: #fff;
   background-color: #B384FF;
