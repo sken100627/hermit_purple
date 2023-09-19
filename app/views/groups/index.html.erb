@@ -15,7 +15,13 @@
         <div class="d-flex justify-content-between">
           <strong class="text-gray-dark"><%= group.group_name %></strong>
           <div class="mx-1">
-            <%= link_to "Join", "#", class: "btn btn-purple mx-3" %>
+            <% if group.owner_id == current_user.id %>
+              <% if group.users.include?(current_user) %>
+                <%= link_to "Exit", "#", class: "btn btn-purple mx-3" %>
+              <% else %> 
+                <%= link_to "Join", group_join_path(group.id), class: "btn btn-purple mx-3" %>
+              <% end %>
+            <% end %>
             <%= link_to "Show", group_path(group.id), class: "btn btn-purple" %>
           </div>
         </div>
