@@ -17,7 +17,7 @@
           <div class="mx-1">
             <% if group.owner_id == current_user.id %>
               <% if group.users.include?(current_user) %>
-                <%= link_to "Exit", "#", class: "btn btn-purple mx-3" %>
+                <%= link_to "Exit", group_path(group.id), data: { turbo_method: :delete }, class: "btn btn-purple mx-3" %>
               <% else %> 
                 <%= link_to "Join", group_join_path(group.id), class: "btn btn-purple mx-3" %>
               <% end %>

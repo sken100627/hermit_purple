@@ -42,6 +42,14 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+    @group = Group.find(params[:id])
+    @group.users.delete(current_user)
+    redirect_to root_path
+  end
+
+  private
+
   def group_params
     params.require(:group).permit(:group_name, :introduction, :group_image)
   end
