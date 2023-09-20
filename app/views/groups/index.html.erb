@@ -13,9 +13,17 @@
       <%= image_tag group.group_image, class: "bd-placeholder-img flex-shrink-0 me-2 rounded group-icon" %>
       <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
         <div class="d-flex justify-content-between">
-          <strong class="text-gray-dark"><%= group.group_name %></strong>
+          <strong class="text-gray-dark">
+            <%= group.group_name %><br>
+            <div class="mb-1"><%= "#{(group.users.count) + 1 }人が参加中です" %></div>
+          </strong>
           <div class="mx-1">
-            <%= link_to "Join", "#", class: "btn btn-purple mx-3" %>
+              <% if group.owner_id == current_user.id %>
+              <% elsif group.users.include?(current_user) %>
+                <%= link_to "Exit", group_exit_path(group.id), data: { turbo_method: :delete }, class: "btn btn-purple mx-3" %>
+              <% else %> 
+                <%= link_to "Join", group_join_path(group.id), class: "btn btn-purple mx-3" %>
+              <% end %>
             <%= link_to "Show", group_path(group.id), class: "btn btn-purple" %>
           </div>
         </div>
