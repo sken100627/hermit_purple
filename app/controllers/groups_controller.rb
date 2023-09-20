@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :login_restrictions, only: :edit
 
   def index
     @groups = Group.all
@@ -63,6 +64,12 @@ class GroupsController < ApplicationController
 
   def set_group 
     @group = Group.find(params[:id])
+  end
+
+  def login_restrictions
+    return unless current_user.id != @group.owner_id
+
+    redirect_to root_path
   end
 
 end
