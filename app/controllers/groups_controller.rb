@@ -59,7 +59,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:group_name, :introduction, :group_image)
+    params.require(:group).permit(:group_name, :introduction, :group_image).merge(user_id: current_user.id)
   end
 
   def set_group
