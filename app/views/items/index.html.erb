@@ -1,0 +1,25 @@
+<div class="container mt-1">
+  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+      <h3 class="mb-2"><%= @group.group_name %></h3>
+      <div class="card-text mb-auto">
+        <p><%= @group.introduction %></p>
+        <div class="mb-1 text-body-secondary">参加メンバー</div>
+        <p>
+        <% unless @group.users.present? %>
+          まだメンバーはいません。
+        <% else %>
+          <% @group.users.each do |member| %>
+              <%= member.nickname %>
+            <% end %>
+          <% end %>
+        </p>
+        <div class="mb-1 text-body-secondary">ホスト</div>
+        <p><%= @group.user.nickname %></p>
+      </div>
+    </div>
+    <div class="col-auto d-none d-lg-block">
+      <%= image_tag @group.group_image, class: "bd-placeholder-img item-group-icon" %>
+    </div>
+  </div>
+</div>

@@ -10,8 +10,10 @@
             <%= member.nickname %>
           <% end %>
         </div>
-        <p class="text-center">ホスト<p><br>
-        
+        <p class="text-center">ホスト<p>
+        <div class="text-center mb-4">
+          <%= @group.user.nickname %>
+        </div>
       </div>
       <% if @group.owner_id == current_user.id %>
         <p><%=link_to 'Edit', edit_group_path(@group.id), class:"btn btn-purple mx-auto d-block w-50" %></p>
