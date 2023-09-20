@@ -3,6 +3,8 @@
 
   <%= form_with model: @group, url: group_path(@group.id), local: true do |f| %>
 
+  <%= render 'shared/error_messages', model: f.object %>
+
     <div class="mb-3">
       <div class="weight-bold-text">
         グループ名
