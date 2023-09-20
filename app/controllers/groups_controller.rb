@@ -62,7 +62,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:group_name, :introduction, :group_image)
   end
 
-  def set_group 
+  def set_group
     @group = Group.find(params[:id])
   end
 
@@ -71,5 +71,4 @@ class GroupsController < ApplicationController
 
     redirect_to root_path
   end
-
 end
