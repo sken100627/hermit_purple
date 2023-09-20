@@ -6,10 +6,14 @@
         <p class="text-center mb-4"><%= @group.introduction %></p>
         <p class="text-center">参加メンバー<p>
         <div class="text-center mb-4">
-          <% @group.users.each do |member| %>
-            <%= member.nickname %>
+          <% unless @group.users.present? %>
+            まだメンバーはいません。
+          <% else %>
+            <% @group.users.each do |member| %>
+              <%= member.nickname %>
+            <% end %>
           <% end %>
-        </div>
+          </div>
         <p class="text-center">ホスト<p>
         <div class="text-center mb-4">
           <%= @group.user.nickname %>
