@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def index
     @groups = Group.all
@@ -20,7 +21,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
   end
 
   def join
@@ -30,11 +30,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to group_path(@group)
     else
@@ -49,7 +47,6 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @group = Group.find(params[:id])
     if current_user.id == @group.owner_id
       @group.destroy
       redirect_to root_path
@@ -62,6 +59,10 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:group_name, :introduction, :group_image)
+  end
+
+  def set_group 
+    @group = Group.find(params[:id])
   end
 
 end
