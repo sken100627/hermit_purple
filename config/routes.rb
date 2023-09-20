@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: "groups#index"
   resources :groups do
     get "join" => "groups#join"
+    delete "exit" => "groups#exit"
   end
 end
