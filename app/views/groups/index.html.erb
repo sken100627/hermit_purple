@@ -13,10 +13,10 @@
       <%= image_tag group.group_image, class: "bd-placeholder-img flex-shrink-0 me-2 rounded group-icon" %>
       <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
         <div class="d-flex justify-content-between">
-          <strong class="text-gray-dark">
+          <div class="text-gray-dark font-weight-light">
             <%= group.group_name %><br>
             <div class="mb-1"><%= "#{(group.users.count) + 1 }人が参加中です" %></div>
-          </strong>
+          </div>
           <div class="mx-1">
               <% if group.owner_id == current_user.id %>
               <% elsif group.users.include?(current_user) %>
