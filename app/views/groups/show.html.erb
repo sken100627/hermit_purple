@@ -15,6 +15,6 @@
       </div>
       <% if @group.owner_id == current_user.id %>
         <p><%=link_to 'Edit', edit_group_path(@group.id), class:"btn btn-purple mx-auto d-block w-50" %></p>
-        <p><%=link_to 'Delete', "#", class:"btn btn-purple mx-auto d-block w-50" %></p>
+        <p><%=link_to 'Delete', group_path(@group.id), data: { turbo_method: :delete }, class:"btn btn-purple mx-auto d-block w-50" %></p>
       <% end %>
 </div>
