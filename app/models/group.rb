@@ -8,5 +8,4 @@ class Group < ApplicationRecord
     validates :introduction
     validates :group_image
   end
-
 end
