@@ -26,6 +26,11 @@ class ItemsController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    @group = Group.find(params[:group_id])
+  end
+
   private
 
   def item_params
