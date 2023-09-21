@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @group = Group.find(params[:group_id])
   end
 
   private
