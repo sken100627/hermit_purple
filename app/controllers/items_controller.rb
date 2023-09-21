@@ -26,6 +26,21 @@ class ItemsController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    @group = Group.find(params[:group_id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @group = Group.find(params[:group_id])
+    if @item.update(item_params)
+      redirect_to group_items_path(@group.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def item_params
