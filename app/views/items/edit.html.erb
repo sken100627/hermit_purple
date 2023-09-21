@@ -65,7 +65,9 @@
 
 
       <%= f.submit "update" ,class:"btn btn-purple mx-auto d-block w-50" %><br />
-      <%=link_to 'Delete', "/groups/#{@group.id}/items/#{@item.id}", data: { turbo_method: :delete }, class:"btn btn-purple mx-auto d-block w-50" %><br />
+      <% if current_user.id == @item.user.id %>
+        <%=link_to 'Delete', "/groups/#{@group.id}/items/#{@item.id}", data: { turbo_method: :delete }, class:"btn btn-purple mx-auto d-block w-50" %><br />
+      <% end %>
       <%=link_to 'Back', group_items_path(@group.id), class:"btn btn-purple mx-auto d-block w-50" %>
   <% end %>
 </div>

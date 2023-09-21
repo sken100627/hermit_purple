@@ -41,6 +41,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @group = Group.find(params[:group_id])
+    if current_user.id == @item.user.id
+      @item.destroy
+      redirect_to group_items_path(@group.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def item_params
