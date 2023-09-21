@@ -1,0 +1,63 @@
+<div class="form-group-create w-100 m-auto mt-5">
+  <h1 class="fs-1 mb-5 fw-normal text-center">Search Item</h1>
+
+  <%= form_with model: @item, url: group_items_path(@group.id), local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="mb-3">
+      <div class="weight-bold-text">
+        探し物
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :group_name, class:"form-control", id:"exampleFormControlInput1", placeholder:"例) はさみ（必須 20文字まで)", maxlength:"20" %>
+    </div>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        探し物画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :group_image, id:"group-image" %>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div class="weight-bold-text">
+        保管場所
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :group_name, class:"form-control", id:"exampleFormControlInput1", placeholder:"例) 1階リビング　道具箱の2段目の引き出し（必須 20文字まで)", maxlength:"20" %>
+    </div>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        保管場所画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :group_image, id:"group-image" %>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <div class="weight-bold-text">
+        補足情報
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :introduction, class:"form-control", id:"exampleFormControlTextarea1", placeholder:"グループの紹介文（必須 100文字まで）例）1階リビング入って右側に道具箱はあります。。" ,rows:"7" ,maxlength:"100" %>
+    </div>
+
+
+      <%= f.submit "registration" ,class:"btn btn-purple mx-auto d-block w-50" %><br />
+      <%=link_to 'Back', group_items_path(@group.id), class:"btn btn-purple mx-auto d-block w-50" %>
+
+  <% end %>
+</div>
