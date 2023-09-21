@@ -43,7 +43,7 @@
               <p class="card-text"><%= item.name %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <%= link_to "Show", "#", class: "btn btn-sm btn-purple" %>
+                  <%= link_to "Show", "/groups/#{@group.id}/items/#{item.id}", class: "btn btn-sm btn-purple" %>
                   <%= link_to "Edit", "#", class: "btn btn-sm btn-purple" %>
                 </div>
                 <small class="text-body-secondary">数量　<%= item.quantity %></small>
@@ -55,3 +55,4 @@
     </div>
   </div>
 </div>
+
