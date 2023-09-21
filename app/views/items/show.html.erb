@@ -1,0 +1,17 @@
+<div class="flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5"><%= @item.name %></h2>
+        <p class="lead">数量　<%= @item.quantity %></p>
+      </div>
+      <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
+    </div>
+    <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5"><%= @item.storage %></h2>
+        <p class="lead"><%= @item.explanation %></p>
+      </div>
+      <%= image_tag @item.storage_image, class: "mx-auto item-storage-icon" %>
+    </div>
+  </div>
+</div>

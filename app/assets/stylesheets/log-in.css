@@ -163,3 +163,20 @@ body {
   width: 100%;
   height: 225px;
 }
+
+.item-show-icon {
+  width: 80%;
+  height: 300px;
+  border-radius: 21px 21px 0 0;
+}
+
+.item-storage-icon {
+  width: 80%;
+  height: 300px;
+  border-radius: 21px 21px 0 0;
+}
+
+.text-bg-purple {
+  color: #fff !important;
+  background-color: RGBA(179, 132, 255, var(--bs-bg-opacity, 1)) !important;
+}
