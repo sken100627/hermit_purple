@@ -10,7 +10,7 @@
         探し物
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :group_name, class:"form-control", id:"exampleFormControlInput1", placeholder:"例) はさみ（必須 20文字まで)", maxlength:"20" %>
+      <%= f.text_area :name, class:"form-control", id:"exampleFormControlInput1", placeholder:"例) はさみ（必須 20文字まで)", maxlength:"20" %>
     </div>
 
     <div class="img-upload">
@@ -22,37 +22,45 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :group_image, id:"group-image" %>
+        <%= f.file_field :item_image, id:"group-image" %>
       </div>
+    </div>
+
+    <div class="mb-4">
+      <div class="weight-bold-text">
+        数量
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.number_field :quantity, class:"quantity-form-control", id:"exampleFormControlInput1"%>
     </div>
 
     <div class="mb-3">
       <div class="weight-bold-text">
         保管場所
-        <span class="indispensable">必須</span>
+        <span class="optional">任意</span>
       </div>
-      <%= f.text_area :group_name, class:"form-control", id:"exampleFormControlInput1", placeholder:"例) 1階リビング　道具箱の2段目の引き出し（必須 20文字まで)", maxlength:"20" %>
+      <%= f.text_area :storage, class:"form-control", id:"exampleFormControlInput1", placeholder:"例) 1階リビング　道具箱の2段目の引き出し（必須 20文字まで)", maxlength:"20" %>
     </div>
 
     <div class="img-upload">
       <div class="weight-bold-text">
         保管場所画像
-        <span class="indispensable">必須</span>
+        <span class="optional">任意</span>
       </div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :group_image, id:"group-image" %>
+        <%= f.file_field :storage_image, id:"group-image" %>
       </div>
     </div>
 
     <div class="mb-5">
       <div class="weight-bold-text">
         補足情報
-        <span class="indispensable">必須</span>
+        <span class="optional">任意</span>
       </div>
-      <%= f.text_area :introduction, class:"form-control", id:"exampleFormControlTextarea1", placeholder:"グループの紹介文（必須 100文字まで）例）1階リビング入って右側に道具箱はあります。。" ,rows:"7" ,maxlength:"100" %>
+      <%= f.text_area :explanation, class:"form-control", id:"exampleFormControlTextarea1", placeholder:"グループの紹介文（必須 100文字まで）例）1階リビング入って右側に道具箱はあります。" ,rows:"7" ,maxlength:"100" %>
     </div>
 
 

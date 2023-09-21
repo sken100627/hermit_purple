@@ -60,9 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_085531) do
 
   create_table "items", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "storage", null: false
+    t.string "storage"
     t.integer "quantity", null: false
-    t.text "explanation", null: false
+    t.text "explanation"
     t.bigint "user_id"
     t.bigint "group_id"
     t.datetime "created_at", null: false

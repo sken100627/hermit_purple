@@ -43,11 +43,12 @@
 
 ## groups テーブル
 
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| group_name   | string  | null: false |
-| introduction | text    | null: false |
-| owner_id     | integer | null: false |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| group_name   | string     | null: false                    |
+| introduction | text       | null: false                    |
+| owner_id     | integer    | null: false                    |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 
