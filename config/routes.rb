@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :groups do
     get "join" => "groups#join"
     delete "exit" => "groups#exit"
-    resources :items
+    resources :items do
+      collection do
+        get 'search'
+      end
+    end
   end
 end

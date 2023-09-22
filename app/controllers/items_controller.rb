@@ -52,6 +52,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @group = Group.find(params[:group_id])
+    if params[:keyword].present?
+      @items = @group.items.search(params[:keyword])
+    else
+      @items = @group.items
+    end
+    render :index
+  end
+
   private
 
   def item_params
