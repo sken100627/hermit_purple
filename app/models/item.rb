@@ -4,12 +4,19 @@ class Item < ApplicationRecord
   has_one_attached :item_image
   has_one_attached :storage_image
 
+  mount_uploader :pdf, PdfUploader
+
   with_options presence: true do
     validates :name
-    validates :item_image
     validates :quantity, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 500}
     validates :user
     validates :group
+  end
+  validate :required_either_image_or_pdf
+
+  def required_either_image_or_pdf
+    return if item_image.present? ^ pdf.present?
+    errors.add(:base, '画像またはPDFのどちらか一方を入力してください')
   end
 
   def self.search(search)

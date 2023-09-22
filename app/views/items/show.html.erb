@@ -6,7 +6,13 @@
       <h2 class="display-5"><%= @item.name %></h2>
       <p class="lead">数量　<%= @item.quantity %></p>
     </div>
-    <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
+    <% if @item.item_image.present? %>
+      <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
+    <% elsif @item.pdf.present? %>
+      <a href="<%= image_url(@item.pdf_url) %>" target="_blank">
+        <%= image_tag "PDF.jpg", class: "mx-auto item-show-icon" %>
+      </a>
+    <% end %>
   </div>
   <% if @item.storage.present? && @item.explanation.present? && @item.storage_image.present? %>
     <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">

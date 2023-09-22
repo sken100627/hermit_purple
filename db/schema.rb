@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_085531) do
     t.string "storage"
     t.integer "quantity", null: false
     t.text "explanation"
+    t.string "pdf"
     t.bigint "user_id"
     t.bigint "group_id"
     t.datetime "created_at", null: false
