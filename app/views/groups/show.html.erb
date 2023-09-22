@@ -2,9 +2,9 @@
   <h1 class="fs-1 mb-5 fw-normal text-center">Group Detail</h1>
       <div class="m-auto mb-5">
         <%= image_tag @group.group_image, class: "rounded-circle group-show-icon d-block mx-auto mb-4" %>
-        <h2 class="h3 mb-4 fw-normal text-center"><%= @group.group_name %></h2>
+        <h2 class="h3 mb-4 fw-normal text-center border"><%= @group.group_name %></h2>
         <p class="text-center mb-4"><%= @group.introduction %></p>
-        <p class="text-center">参加メンバー<p>
+        <p class="text-center border">参加メンバー<p>
         <div class="text-center mb-4">
           <% unless @group.users.present? %>
             まだメンバーはいません。
@@ -14,7 +14,7 @@
             <% end %>
           <% end %>
           </div>
-        <p class="text-center">ホスト<p>
+        <p class="text-center border">ホスト<p>
         <div class="text-center mb-4">
           <%= @group.user.nickname %>
         </div>
