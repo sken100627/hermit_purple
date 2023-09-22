@@ -15,14 +15,17 @@
 
     <div class="img-upload">
       <div class="weight-bold-text">
-        探し物画像
+        探し物画像 or PDF
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
+        <small>画像</small>
         <%= f.file_field :item_image, id:"group-image" %>
+        <small>PDF</small>
+        <%= f.file_field :pdf, id:"group-image" %>
       </div>
     </div>
 
