@@ -12,6 +12,12 @@ class Item < ApplicationRecord
     validates :user
     validates :group
   end
+  validate :required_either_image_or_pdf
+
+  def required_either_image_or_pdf
+    return if item_image.present? ^ pdf.present?
+    errors.add(:base, '画像またはPDFのどちらか一方を入力してください')
+  end
 
   def self.search(search)
     Item.where('name LIKE(?)', "%#{search}%")
