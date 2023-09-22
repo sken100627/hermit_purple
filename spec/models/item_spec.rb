@@ -8,17 +8,35 @@ RSpec.describe Item, type: :model do
   describe '探し物新規登録' do
     context '探し物新規登録できるとき' do
       it 'nameとitem_image、quantity、storage、storage_image、explanation、user_id、group_idが存在すれば登録できる' do
+        @item.pdf = nil
         expect(@item).to be_valid
       end
-      it 'storageがなくても保存できること' do
+      it 'nameとpdf、quantity、storage、storage_image、explanation、user_id、group_idが存在すれば登録できる' do
+        @item.item_image = nil
+        expect(@item).to be_valid
+      end
+      it 'storageがなくても保存できること（pdfのみ存在）' do
+        @item.item_image = nil
         @item.storage = ''
         expect(@item).to be_valid
       end
-      it 'storage_imageがなくても保存できること' do
+      it 'storageがなくても保存できること（item_imageのみ存在）' do
+        @item.pdf = nil
+        @item.storage = ''
+        expect(@item).to be_valid
+      end
+      it 'storage_imageがなくても保存できること（pdfのみ存在）' do
+        @item.item_image = nil
         @item.storage_image = nil
         expect(@item).to be_valid
       end
-      it 'explanationがなくても保存できること' do
+      it 'storage_imageがなくても保存できること（item_imageのみ存在）' do
+        @item.pdf = nil
+        @item.storage_image = nil
+        expect(@item).to be_valid
+      end
+      it 'explanationがなくても保存できること（pdfのみ存在）' do
+        @item.item_image = nil
         @item.explanation = ''
         expect(@item).to be_valid
       end
@@ -28,11 +46,6 @@ RSpec.describe Item, type: :model do
         @item.name = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
-      end
-      it 'item_imageが空では登録できないこと' do
-        @item.item_image = nil
-        @item.valid?
-        expect(@item.errors.full_messages).to include("Item image can't be blank")
       end
       it 'quantityが空では登録できないこと' do
         @item.quantity = ''
@@ -48,6 +61,14 @@ RSpec.describe Item, type: :model do
         @item.group = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Group can't be blank")
+      end
+      it 'item_imageとpdfがないと保存できないこと' do
+        @item.item_image = nil
+        @item.pdf = nil
+        expect(@item.errors.full_messages).to include()
+      end
+      it 'item_imageとpdfがあると保存できないこと' do
+        expect(@item.errors.full_messages).to include()
       end
     end
   end
