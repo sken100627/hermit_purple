@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.string :storage
       t.integer :quantity, null: false
       t.text :explanation
+      t.string :pdf
       t.references :user,  foreign_key: true
       t.references :group, foreign_key: true
 
