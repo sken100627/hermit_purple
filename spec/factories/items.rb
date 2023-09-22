@@ -13,5 +13,6 @@ FactoryBot.define do
       item.storage_image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
     end
     
+    
   end
 end
