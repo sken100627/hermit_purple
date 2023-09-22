@@ -41,7 +41,7 @@
           <% if item.item_image.present? %>
             <%= image_tag item.item_image, class: "bd-placeholder-img card-img-top item-index-icon" %>
           <% elsif item.pdf.present? %>
-            <object data="<%= image_url(item.pdf_url) %>" ></object>
+            <%= image_tag "PDF.jpg", class: "bd-placeholder-img card-img-top item-index-icon" %>
           <% end %>
             <div class="card-body">
               <p class="card-text"><%= item.name %></p>

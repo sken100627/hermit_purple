@@ -9,7 +9,9 @@
     <% if @item.item_image.present? %>
       <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
     <% elsif @item.pdf.present? %>
-      <object data="<%= image_url(@item.pdf_url) %>" ></object>
+      <a href="<%= image_url(@item.pdf_url) %>" target="_blank">
+        <%= image_tag "PDF.jpg", class: "mx-auto item-show-icon" %>
+      </a>
     <% end %>
   </div>
   <% if @item.storage.present? && @item.explanation.present? && @item.storage_image.present? %>
