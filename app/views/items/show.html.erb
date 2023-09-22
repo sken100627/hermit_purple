@@ -1,18 +1,63 @@
 <div class="flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <%=link_to 'Back', group_items_path(@group.id), class:"btn btn-purple d-block w-25" %>
-      <div class="my-3 py-3">
-        <h2 class="display-5"><%= @item.name %></h2>
-        <p class="lead">数量　<%= @item.quantity %></p>
-      </div>
-      <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
+  <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+  <%=link_to 'Back', group_items_path(@group.id), class:"btn btn-purple d-block w-25" %>
+    <div class="my-3 py-3">
+      <p class="lead">探し物</p>
+      <h2 class="display-5"><%= @item.name %></h2>
+      <p class="lead">数量　<%= @item.quantity %></p>
     </div>
+    <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
+  </div>
+  <% if @item.storage.present? && @item.explanation.present? && @item.storage_image.present? %>
     <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
+        <p class="lead">保管場所</p>
         <h2 class="display-5"><%= @item.storage %></h2>
         <p class="lead"><%= @item.explanation %></p>
       </div>
-      <%= image_tag @item.storage_image, class: "mx-auto item-storage-icon" %>
+      <%= image_tag @item.storage_image, class: "mx-auto item-storage-icon" if @item.item_image.attached? %>
     </div>
-  </div>
+  <% elsif @item.storage.present? && @item.explanation.present? %>
+    <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <p class="lead">保管場所</p>
+        <h2 class="display-5"><%= @item.storage %></h2>
+        <p class="lead"><%= @item.explanation %></p>
+      </div>
+    </div>
+  <% elsif @item.storage.present? && @item.storage_image.present? %>
+    <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <p class="lead">保管場所</p>
+        <h2 class="display-5"><%= @item.storage %></h2>
+      </div>
+      <%= image_tag @item.storage_image, class: "mx-auto item-storage-icon" if @item.item_image.attached? %>
+    </div>
+  <% elsif @item.explanation.present? && @item.storage_image.present? %>
+    <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <p class="lead"><%= @item.explanation %></p>
+      </div>
+      <%= image_tag @item.storage_image, class: "mx-auto item-storage-icon" if @item.item_image.attached? %>
+    </div>
+  <% elsif @item.storage.present? %>
+    <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <p class="lead">保管場所</p>
+        <h2 class="display-5"><%= @item.storage %></h2>
+      </div>
+    </div>
+  <% elsif @item.explanation.present? %>
+    <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <p class="lead"><%= @item.explanation %></p>
+      </div>
+    </div>
+  <% elsif @item.storage_image.present? %>
+    <div class="text-bg-purple me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <%= image_tag @item.storage_image, class: "mx-auto item-storage-icon" if @item.item_image.attached? %>
+      </div>
+    </div>
+  <% end %>
 </div>
