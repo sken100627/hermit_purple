@@ -90,6 +90,6 @@ gem 'mini_racer'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
-gem 'carrierwave' , '~> 1.3' ,  '>= 1.3.1'
+gem 'carrierwave', '~> 3.0'
 gem 'cloudinary'
 gem 'dotenv-rails'
