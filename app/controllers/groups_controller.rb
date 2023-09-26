@@ -26,8 +26,12 @@ class GroupsController < ApplicationController
 
   def join
     @group = Group.find(params[:group_id])
-    @group.users << current_user
-    redirect_to  groups_path
+    unless @group.users.include?(current_user)
+      @group.users << current_user
+      notification = Notification.find_by(visited_id: current_user.id, group_id: @group.id, action: "invitation")
+      notification.destroy
+    end
+    redirect_to  groups_path, notice: "チームに参加しました。"
   end
 
   def edit
@@ -55,6 +59,21 @@ class GroupsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def invitation
+    @group = Group.find(params[:group_id])
+
+    @user = User.find_by(id: params[:user_id])
+    notification = Notification.where(visited_id: @user.id, group_id: @group.id, action: "invitation")
+    unless notification.exists?
+      
+      @group.team_invitation_notification(current_user, @user.id, @group.id)
+      
+      redirect_to request.referer, notice: "招待を送りました。"
+    else
+      redirect_to request.referer, alert: "すでに招待しています。"
+    end
+ end
 
   private
 

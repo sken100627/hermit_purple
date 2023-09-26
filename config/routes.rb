@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :groups do
     get "join" => "groups#join"
     delete "exit" => "groups#exit"
+    post "invitation" => "groups#invitation"
     resources :items do
       collection do
         get 'search'
