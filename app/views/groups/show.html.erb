@@ -23,4 +23,10 @@
         <p><%=link_to 'Edit', edit_group_path(@group.id), class:"btn btn-purple mx-auto d-block w-50" %></p>
         <p><%=link_to 'Delete', group_path(@group.id), data: { turbo_method: :delete }, class:"btn btn-purple mx-auto d-block w-50" %></p>
       <% end %>
+      <% if @other_users.exists? %>
+        <%= form_with model: @notification, url: group_invitation_path(@group), method: :post, local: true do |f| %>
+          <%= f.collection_select :user_id, @other_users, :id, :nickname %>
+          <%= f.submit "招待する" %>
+        <% end %>
+      <% end %>
 </div>

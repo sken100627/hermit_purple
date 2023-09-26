@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @other_users = User.where.not(id: @group.users.pluck(:id))
   end
 
   def join
