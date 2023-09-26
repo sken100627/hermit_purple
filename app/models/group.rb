@@ -4,6 +4,8 @@ class Group < ApplicationRecord
   has_one_attached :group_image
   has_many :items
   belongs_to :user
+  has_many :notifications, dependent: :destroy
+
 
   with_options presence: true do
     validates :group_name
