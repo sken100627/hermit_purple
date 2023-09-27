@@ -70,9 +70,9 @@ class GroupsController < ApplicationController
       
       @group.team_invitation_notification(current_user, @user.id, @group.id)
       
-      redirect_to request.referer, notice: "招待を送りました。"
+      redirect_to group_path(@group.id), notice: "招待を送りました。"
     else
-      redirect_to request.referer, alert: "すでに招待しています。"
+      redirect_to group_path(@group.id), alert: "すでに招待しています。"
     end
  end
 

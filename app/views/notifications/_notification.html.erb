@@ -1,7 +1,9 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
 
-<div class="user-view clearfix ">
-  <%= visitor.nickname %> さんからグループへの招待が届きました。
-  <%= link_to "参加する", group_join_path(notification.group_id) %>
+<div class="user-view clearfix border border-3 rounded-3 p-3">
+  <%= l notification.created_at %><br>
+  <%= visitor.nickname %> さんからグループへの招待が届きました。<br>
+  <%= link_to "Join", group_join_path(notification.group_id), class:"btn btn-purple my-3" %>
+  <%= link_to "Cancel", "#", class:"btn btn-purple ms-3" %>
 </div>
