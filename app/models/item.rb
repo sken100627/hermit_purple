@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :quantity, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 500}
+    validates :quantity, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 500, message: 'は0以上500以内の数字で登録してください'}
     validates :user
     validates :group
   end

@@ -2,3 +2,22 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d"
+
+
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      group:
+        group_name: グループ名
+        introduction: 紹介文
+        group_image: グループ画像
+      item:
+        name: 探し物の名前
+        quantity: 数量
+
+  time:
+    formats:
+      default: "%Y/%m/%d"
+
