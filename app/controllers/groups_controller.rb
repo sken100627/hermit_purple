@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @group_user = GroupUser.find_by(user_id: current_user.id)
   end
 
   def new
