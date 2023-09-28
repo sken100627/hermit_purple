@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_notifications
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   before_action :login_restrictions, only: :edit
 
@@ -90,5 +91,9 @@ class GroupsController < ApplicationController
     return unless current_user.id != @group.owner_id
 
     redirect_to root_path
+  end
+
+  def set_notifications
+    @notifications = current_user.passive_notifications
   end
 end

@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_notifications
+
   def index
     @item = Item.new
     @group = Group.find(params[:group_id])
@@ -66,6 +68,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :item_image, :quantity, :storage, :storage_image, :explanation, :pdf).merge(user_id: current_user.id, group_id: params[:group_id])
+  end
+
+  def set_notifications
+    @notifications = current_user.passive_notifications
   end
 
 end
