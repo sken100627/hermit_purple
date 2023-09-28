@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @other_users = User.where.not(id: @group.users.pluck(:id))
+    @other_users = User.where.not(id: @group.owner_id).where.not(id: @group.users.pluck(:id))
   end
 
   def join
