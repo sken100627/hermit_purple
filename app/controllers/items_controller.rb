@@ -64,10 +64,24 @@ class ItemsController < ApplicationController
     render :index
   end
 
+  def use
+    @group = Group.find(params[:group_id])
+    @item = Item.find(params[:item_id])
+    @item.update(taking: true)
+    redirect_to  group_items_path(@group.id)
+  end
+
+  def back
+    @group = Group.find(params[:group_id])
+    @item = Item.find(params[:item_id])
+    @item.update(taking: false)
+    redirect_to  group_items_path(@group.id)
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :item_image, :quantity, :storage, :storage_image, :explanation, :pdf).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:item).permit(:name, :item_image, :quantity, :lower, :storage, :storage_image, :explanation, :pdf).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
   def set_notifications

@@ -205,7 +205,6 @@ body {
 
 .box1 {
   position: relative;
-
 }
 
 .circle {
@@ -213,4 +212,17 @@ body {
   bottom: 1px;
   right: 1px;
   color: darkorange;
+}
+
+.box2 {
+  position: relative;
+}
+
+.taking-out {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: #FFFF00;
+  transform: skewY(-10deg);
 }

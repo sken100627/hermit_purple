@@ -9,11 +9,18 @@
       <%= f.submit "変更" ,class:"btn btn-purple w-25 mb-1" %>
     <% end %>
     <div class="mb-2">
-      <%=link_to '使用開始', "#", class:"btn btn-purple w-25" %>
-      <%=link_to '使用終了', "#", class:"btn btn-purple w-25" %>
+      <%=link_to '使用開始', "/groups/#{@group.id}/items/#{@item.id}/use", class:"btn btn-purple w-25" %>
+      <%=link_to '使用終了', "/groups/#{@group.id}/items/#{@item.id}/back", class:"btn btn-purple w-25" %>
     </div>
     <% if @item.item_image.present? %>
-      <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
+      <div class="box2">
+        <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
+        <% if @item.taking == true %>
+          <div class='taking-out text-dark'>
+            <span>使用中</span>
+          </div>
+        <% end %>
+      </div>
     <% elsif @item.pdf.present? %>
       <a href="<%= image_url(@item.pdf_url) %>" target="_blank">
         <%= image_tag "PDF.jpg", class: "mx-auto item-show-icon" %>

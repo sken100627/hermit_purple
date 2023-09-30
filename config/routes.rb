@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       collection do
         get 'search'
       end
+      get "use" => "items#use"
+      get "back" => "items#back"
     end
   end
   resources :notifications, only: :index
