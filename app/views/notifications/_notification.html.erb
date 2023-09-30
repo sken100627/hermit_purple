@@ -5,5 +5,5 @@
   <%= l notification.created_at %><br>
   <%= visitor.nickname %> さんからグループへの招待が届きました。<br>
   <%= link_to "Join", group_join_path(notification.group_id), class:"btn btn-purple my-3" %>
-  <%= link_to "Cancel", "#", class:"btn btn-purple ms-3" %>
+  <%= link_to "Cancel", group_cancel_path(notification.group_id), data: { turbo_method: :delete }, class:"btn btn-purple ms-3" %>
 </div>

@@ -37,6 +37,13 @@ class GroupsController < ApplicationController
     redirect_to  groups_path, notice: "チームに参加しました。"
   end
 
+  def cancel
+    @group = Group.find(params[:group_id])
+    notification = Notification.find_by(visited_id: current_user.id, group_id: @group.id, action: "invitation")
+    notification.destroy
+    redirect_to  notifications_path
+  end
+
   def edit
   end
 
