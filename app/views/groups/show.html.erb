@@ -14,10 +14,10 @@
             まだメンバーはいません。
           <% else %>
             <% @group.users.each do |member| %>
-              <%= member.nickname %>
+              <%= member.nickname %>　
             <% end %>
           <% end %>
-          </div>
+        </div>
         <p class="text-center border">ホスト<p>
         <div class="text-center mb-4">
           <%= @group.user.nickname %>

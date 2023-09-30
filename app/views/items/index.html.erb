@@ -6,11 +6,11 @@
         <p><%= @group.introduction %></p>
         <div class="mb-1 text-body-secondary">参加メンバー</div>
         <p>
-        <% unless @group.users.present? %>
-          まだメンバーはいません。
-        <% else %>
-          <% @group.users.each do |member| %>
-              <%= member.nickname %>
+          <% unless @group.users.present? %>
+            まだメンバーはいません。
+          <% else %>
+            <% @group.users.each do |member| %>
+                <%= member.nickname %>　
             <% end %>
           <% end %>
         </p>
