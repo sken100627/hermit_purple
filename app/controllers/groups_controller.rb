@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
   before_action :set_notifications
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   before_action :login_restrictions, only: :edit
+  before_action :id_restrictions, only: :show
 
   def index
     @groups = Group.all
@@ -103,5 +104,12 @@ class GroupsController < ApplicationController
 
   def set_notifications
     @notifications = current_user.passive_notifications
+  end
+
+  def id_restrictions
+    @group = Group.find(params[:id])
+    return if @group.owner_id == current_user.id || @group.users.include?(current_user)
+
+    redirect_to root_path
   end
 end

@@ -77,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_170507) do
   create_table "notifications", charset: "utf8", force: :cascade do |t|
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
-    t.bigint "group_id", null: false
+    t.bigint "group_id"
     t.string "action", default: "", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false

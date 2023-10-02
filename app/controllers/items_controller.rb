@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_notifications
+  before_action :id_restrictions
 
   def index
     @item = Item.new
@@ -86,6 +87,13 @@ class ItemsController < ApplicationController
 
   def set_notifications
     @notifications = current_user.passive_notifications
+  end
+
+  def id_restrictions
+    @group = Group.find(params[:group_id])
+    return if @group.owner_id == current_user.id || @group.users.include?(current_user)
+
+    redirect_to root_path
   end
 
 end
