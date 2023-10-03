@@ -60,35 +60,35 @@ RSpec.describe Item, type: :model do
       it 'nameが空では登録できないこと' do
         @item.name = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("探し物の名前を入力してください")
+        expect(@item.errors.full_messages).to include('探し物の名前を入力してください')
       end
       it 'quantityが空では登録できないこと' do
         @item.quantity = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("数量を入力してください")
+        expect(@item.errors.full_messages).to include('数量を入力してください')
       end
       it 'quantityが501以上では登録できないこと' do
         @item.quantity = '501'
         @item.valid?
-        expect(@item.errors.full_messages).to include("数量は0以上500以内の数字で登録してください")
+        expect(@item.errors.full_messages).to include('数量は0以上500以内の数字で登録してください')
       end
       it 'user_idが空では登録できないこと' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Userを入力してください")
+        expect(@item.errors.full_messages).to include('Userを入力してください')
       end
       it 'group_idが空では登録できないこと' do
         @item.group = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Groupを入力してください")
+        expect(@item.errors.full_messages).to include('Groupを入力してください')
       end
       it 'item_imageとpdfがないと保存できないこと' do
         @item.item_image = nil
         @item.pdf = ''
-        expect(@item.errors.full_messages).to include()
+        expect(@item.errors.full_messages).to include
       end
       it 'item_imageとpdfがあると保存できないこと' do
-        expect(@item.errors.full_messages).to include()
+        expect(@item.errors.full_messages).to include
       end
     end
   end

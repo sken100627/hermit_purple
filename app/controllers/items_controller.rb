@@ -57,11 +57,11 @@ class ItemsController < ApplicationController
 
   def search
     @group = Group.find(params[:group_id])
-    if params[:keyword].present?
-      @items = @group.items.search(params[:keyword])
-    else
-      @items = @group.items
-    end
+    @items = if params[:keyword].present?
+               @group.items.search(params[:keyword])
+             else
+               @group.items
+             end
     render :index
   end
 
@@ -69,20 +69,22 @@ class ItemsController < ApplicationController
     @group = Group.find(params[:group_id])
     @item = Item.find(params[:item_id])
     @item.update(taking: true)
-    redirect_to  group_items_path(@group.id)
+    redirect_to group_items_path(@group.id)
   end
 
   def back
     @group = Group.find(params[:group_id])
     @item = Item.find(params[:item_id])
     @item.update(taking: false)
-    redirect_to  group_items_path(@group.id)
+    redirect_to group_items_path(@group.id)
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :item_image, :quantity, :lower, :storage, :storage_image, :explanation, :pdf).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:item).permit(:name, :item_image, :quantity, :lower, :storage, :storage_image, :explanation, :pdf).merge(
+      user_id: current_user.id, group_id: params[:group_id]
+    )
   end
 
   def set_notifications
@@ -95,5 +97,4 @@ class ItemsController < ApplicationController
 
     redirect_to root_path
   end
-
 end

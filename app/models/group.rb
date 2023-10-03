@@ -6,7 +6,6 @@ class Group < ApplicationRecord
   belongs_to :user
   has_many :notifications, dependent: :destroy
 
-
   with_options presence: true do
     validates :group_name
     validates :introduction
@@ -16,18 +15,16 @@ class Group < ApplicationRecord
   end
 
   def team_invitation_notification(current_user, visited_id, group_id)
-    
-    temp = Notification.where(visitor_id: current_user.id, visited_id: visited_id, group_id: group_id)
+    temp = Notification.where(visitor_id: current_user.id, visited_id:, group_id:)
 
-    if temp.blank?
-      notification = current_user.active_notifications.new(
-        visited_id: visited_id,
-        group_id: group_id,
-        action: "invitation",
-      )
+    return unless temp.blank?
 
-      notification.save if notification.valid?
-    end
+    notification = current_user.active_notifications.new(
+      visited_id:,
+      group_id:,
+      action: 'invitation'
+    )
+
+    notification.save if notification.valid?
   end
-
 end
