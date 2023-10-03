@@ -62,8 +62,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_170507) do
     t.string "name", null: false
     t.string "storage"
     t.integer "quantity", null: false
+    t.integer "lower"
     t.text "explanation"
     t.string "pdf"
+    t.boolean "taking", default: false, null: false
     t.bigint "user_id"
     t.bigint "group_id"
     t.datetime "created_at", null: false
@@ -75,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_170507) do
   create_table "notifications", charset: "utf8", force: :cascade do |t|
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
-    t.bigint "group_id", null: false
+    t.bigint "group_id"
     t.string "action", default: "", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
@@ -95,6 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_170507) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

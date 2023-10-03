@@ -5,6 +5,10 @@ body {
   font-family: 'Chokokutai', cursive;
   font-family: 'Reggae One', cursive;
   font-family: 'Rampart One', cursive;
+  font-family: 'Yuji Syuku', serif;
+  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Shippori Antique B1', sans-serif;
+  font-family: 'Mochiy Pop P One', sans-serif;
 }
 
 .form-login {
@@ -40,6 +44,10 @@ body {
 .hermit-purple-header-icon {
   width: 100px; 
   height: 57pxs;
+}
+
+.btn {
+  --bs-btn-padding-x: 0.55rem !important;
 }
 
 .btn-purple {
@@ -159,6 +167,23 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.quantity-form-control-show {
+  width: 15%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 .item-index-icon {
   width: 100%;
   height: 225px;
@@ -188,7 +213,6 @@ body {
 
 .box1 {
   position: relative;
-
 }
 
 .circle {
@@ -196,4 +220,17 @@ body {
   bottom: 1px;
   right: 1px;
   color: darkorange;
+}
+
+.box2 {
+  position: relative;
+}
+
+.taking-out {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: #FFFF00;
+  transform: skewY(-10deg);
 }

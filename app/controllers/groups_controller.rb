@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
   before_action :set_notifications
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   before_action :login_restrictions, only: :edit
+  before_action :id_restrictions, only: :show
 
   def index
     @groups = Group.all
@@ -35,6 +36,13 @@ class GroupsController < ApplicationController
       notification.destroy
     end
     redirect_to  groups_path, notice: "チームに参加しました。"
+  end
+
+  def cancel
+    @group = Group.find(params[:group_id])
+    notification = Notification.find_by(visited_id: current_user.id, group_id: @group.id, action: "invitation")
+    notification.destroy
+    redirect_to  notifications_path
   end
 
   def edit
@@ -96,5 +104,12 @@ class GroupsController < ApplicationController
 
   def set_notifications
     @notifications = current_user.passive_notifications
+  end
+
+  def id_restrictions
+    @group = Group.find(params[:id])
+    return if @group.owner_id == current_user.id || @group.users.include?(current_user)
+
+    redirect_to root_path
   end
 end

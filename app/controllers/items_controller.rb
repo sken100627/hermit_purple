@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_notifications
+  before_action :id_restrictions
 
   def index
     @item = Item.new
@@ -64,14 +65,35 @@ class ItemsController < ApplicationController
     render :index
   end
 
+  def use
+    @group = Group.find(params[:group_id])
+    @item = Item.find(params[:item_id])
+    @item.update(taking: true)
+    redirect_to  group_items_path(@group.id)
+  end
+
+  def back
+    @group = Group.find(params[:group_id])
+    @item = Item.find(params[:item_id])
+    @item.update(taking: false)
+    redirect_to  group_items_path(@group.id)
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :item_image, :quantity, :storage, :storage_image, :explanation, :pdf).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:item).permit(:name, :item_image, :quantity, :lower, :storage, :storage_image, :explanation, :pdf).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
   def set_notifications
     @notifications = current_user.passive_notifications
+  end
+
+  def id_restrictions
+    @group = Group.find(params[:group_id])
+    return if @group.owner_id == current_user.id || @group.users.include?(current_user)
+
+    redirect_to root_path
   end
 
 end
