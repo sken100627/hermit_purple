@@ -5,6 +5,7 @@ FactoryBot.define do
     storage { Faker::Lorem.word }
     explanation { Faker::Lorem.sentence }
     pdf { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'sample.pdf')) }
+    lower { Faker::Number.within(range: 0..500) }
     association :user
     association :group
 

@@ -11,6 +11,8 @@ class Group < ApplicationRecord
     validates :group_name
     validates :introduction
     validates :group_image
+    validates :user
+    validates :owner_id
   end
 
   def team_invitation_notification(current_user, visited_id, group_id)
