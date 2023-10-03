@@ -5,6 +5,7 @@ FactoryBot.define do
     storage { Faker::Lorem.word }
     explanation { Faker::Lorem.sentence }
     pdf { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'sample.pdf')) }
+    lower { Faker::Number.within(range: 0..500) }
     association :user
     association :group
 
@@ -12,6 +13,5 @@ FactoryBot.define do
       item.item_image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
       item.storage_image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
     end
-    
   end
 end

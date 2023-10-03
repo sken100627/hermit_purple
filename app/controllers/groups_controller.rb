@@ -32,17 +32,17 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:group_id])
     unless @group.users.include?(current_user)
       @group.users << current_user
-      notification = Notification.find_by(visited_id: current_user.id, group_id: @group.id, action: "invitation")
+      notification = Notification.find_by(visited_id: current_user.id, group_id: @group.id, action: 'invitation')
       notification.destroy
     end
-    redirect_to  groups_path, notice: "チームに参加しました。"
+    redirect_to groups_path, notice: 'チームに参加しました。'
   end
 
   def cancel
     @group = Group.find(params[:group_id])
-    notification = Notification.find_by(visited_id: current_user.id, group_id: @group.id, action: "invitation")
+    notification = Notification.find_by(visited_id: current_user.id, group_id: @group.id, action: 'invitation')
     notification.destroy
-    redirect_to  notifications_path
+    redirect_to notifications_path
   end
 
   def edit
@@ -75,16 +75,16 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:group_id])
 
     @user = User.find_by(id: params[:user_id])
-    notification = Notification.where(visited_id: @user.id, group_id: @group.id, action: "invitation")
-    unless notification.exists?
-      
-      @group.team_invitation_notification(current_user, @user.id, @group.id)
-      
-      redirect_to group_path(@group.id), notice: "招待を送りました。"
+    notification = Notification.where(visited_id: @user.id, group_id: @group.id, action: 'invitation')
+    if notification.exists?
+      redirect_to group_path(@group.id), alert: 'すでに招待しています。'
     else
-      redirect_to group_path(@group.id), alert: "すでに招待しています。"
+
+      @group.team_invitation_notification(current_user, @user.id, @group.id)
+
+      redirect_to group_path(@group.id), notice: '招待を送りました。'
     end
- end
+  end
 
   private
 
