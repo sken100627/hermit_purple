@@ -127,10 +127,12 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 ・テスト  
 ・テキストエディタ  
 ・Ruby  
-・Ruby on rails
+・Ruby on rails  
+・HTML  
+・CSS
 
 # ローカルでの動作確認方法
-以下のコマンドを順に実行
+以下のコマンドを順に実行  
 % git clone https://github.com/sken100627/hermit_purple.git  
 % cd xxxxxxxx  
 % bundle install  
