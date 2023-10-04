@@ -8,10 +8,10 @@ Hermit Purple
 https://hermit-purple.onrender.com
 
 # テスト用アカウント
-・Basic認証パスワード：  
-・Basic認証ID：  
-・メールアドレス：  
-・パスワード：
+・Basic認証パスワード：100627  
+・Basic認証ID：sken10  
+・メールアドレス：123@gmail.com  
+・パスワード：s100627
 
 # 利用方法
 
@@ -125,7 +125,7 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 ・フロントエンド  
 ・バックエンド  
 ・テスト  
-・テキストボックス  
+・テキストエディタ  
 ・Ruby  
 ・Ruby on rails
 
