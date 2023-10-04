@@ -50,6 +50,56 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 
 # 実装した機能についての画像やGIFおよびその説明
 
+## グループ作成
+
+### 「Create Group」ボタンからグループ作成画面へ遷移
+[![Image from Gyazo](https://i.gyazo.com/752cf5af8770781f0dd1dcc425bcd57a.png)](https://gyazo.com/752cf5af8770781f0dd1dcc425bcd57a)  
+
+
+### 必要な情報を入力し、グループを作成
+[![Image from Gyazo](https://i.gyazo.com/344bbae48836adabab75233b81c7b99b.gif)](https://gyazo.com/344bbae48836adabab75233b81c7b99b)  
+
+## 探し物登録
+
+### グループ名またはグループ画像をクリックし、探し物一覧ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/0090a84b3cd35ac2319c3f4e4fb6c4d2.gif)](https://gyazo.com/0090a84b3cd35ac2319c3f4e4fb6c4d2)
+
+### 「＋」ボタンから探し物登録ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/378753cf2b8ace2dce8c1c0d4d93a1d6.gif)](https://gyazo.com/378753cf2b8ace2dce8c1c0d4d93a1d6)
+
+### 必要な情報を入力し、探し物を作成
+[![Image from Gyazo](https://i.gyazo.com/33d9c167d0806be96681d06386b328f5.gif)](https://gyazo.com/33d9c167d0806be96681d06386b328f5)
+
+## 探し物詳細ページ
+
+### 「show」ボタンから探し物詳細ページへ遷移
+[![Image from Gyazo](https://i.gyazo.com/d31d12a6cbf8b2f62d17b23c828c9cca.gif)](https://gyazo.com/d31d12a6cbf8b2f62d17b23c828c9cca)
+
+## 使用中の表示・非表示
+
+### 使用開始ボタンを押すと使用中表示が出る
+[![Image from Gyazo](https://i.gyazo.com/4ed46f9f107a38eb662de6f9288fa1b3.gif)](https://gyazo.com/4ed46f9f107a38eb662de6f9288fa1b3)
+
+### 使用終了ボタンを押すと使用中表示が消える
+[![Image from Gyazo](https://i.gyazo.com/1c15bd25c2cacd2039a10af63d4d9aff.gif)](https://gyazo.com/1c15bd25c2cacd2039a10af63d4d9aff)
+
+## 下限数量を下回ると「発注が必要です」メッセージが表示される
+
+### 使用した数量分数量を変更
+[![Image from Gyazo](https://i.gyazo.com/97e0270ac35f28e983f3bccf9a9ae672.gif)](https://gyazo.com/97e0270ac35f28e983f3bccf9a9ae672)
+
+### 下限数量下回るとメッセージ表示
+[![Image from Gyazo](https://i.gyazo.com/6e6d2d37a33e8182dbd5152da1a68a2f.gif)](https://gyazo.com/6e6d2d37a33e8182dbd5152da1a68a2f)
+
+## グループ招待
+
+### グループ詳細ページよりユーザーを招待
+[![Image from Gyazo](https://i.gyazo.com/ba2651cacbf54e6e9dafdf865cd66a2d.gif)](https://gyazo.com/ba2651cacbf54e6e9dafdf865cd66a2d)
+
+### 招待されたユーザーの通知一覧ページからグループに参加
+[![Image from Gyazo](https://i.gyazo.com/aeecc0624db3453c1feefe00de09cd39.gif)](https://gyazo.com/aeecc0624db3453c1feefe00de09cd39)
+
+
 # 実装予定の機能
 下限数量を下回った時に、グループ作成者（管理者）に通知を飛ばす。
 
@@ -73,11 +123,11 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 以下のコマンドを順に実行
 % git clone https://github.com/sken100627/hermit_purple.git  
 % cd xxxxxxxx  
-% bundle install
+% bundle install  
 % rails db:create
 
 # 工夫したポイント
-家族や職場などの様々な場面で使用できるように、グループ機能を搭載した。セキュリティ面を考慮し、グループへの参加は招待されたもののみが可能とした。また、数量の下限設定を搭載し、発注頻度や在庫管理ができるようにした。さらに、PDFファイルを保存できるようにしたことで、家具の組み立て図や家電の取扱説明書などを保存できるようにした。
+家族や職場などの様々な場面で使用できるように、グループ機能を実装した。セキュリティ面を考慮し、グループへの参加は招待されたもののみが可能とした。また、数量の下限設定を搭載し、発注頻度や在庫管理ができるようにした。さらに、PDFファイルを保存できるようにしたことで、家具の組み立て図や家電の取扱説明書などを保存できるようにした。
 
 # テーブル設計
 
