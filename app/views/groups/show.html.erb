@@ -1,4 +1,4 @@
-<div class="form-group-create w-100 m-auto mt-5">
+<div class="form-group-create w-100 m-auto mt-2">
   <h1 class="fs-1 mb-5 fw-normal text-center">Group Detail</h1>
       <div class='login-flash-message text-center mb-4'>
           <%= flash[:notice] %>
@@ -35,6 +35,6 @@
       <% end %>
       <% if @group.owner_id == current_user.id %>
         <p><%=link_to 'Edit', edit_group_path(@group.id), class:"btn btn-purple mx-auto d-block w-50" %></p>
-        <p><%=link_to 'Delete', group_path(@group.id), data: { turbo_method: :delete }, class:"btn btn-purple mx-auto d-block w-50" %></p>
+        <p><%=link_to 'Delete', group_path(@group.id), data: { turbo_method: :delete }, class:"btn btn-purple mx-auto d-block w-50 mb-6" %></p>
       <% end %>
 </div>

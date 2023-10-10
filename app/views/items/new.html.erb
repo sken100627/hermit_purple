@@ -1,4 +1,4 @@
-<div class="form-group-create w-100 m-auto mt-5">
+<div class="form-group-create w-100 m-auto mt-2">
   <h1 class="fs-1 mb-5 fw-normal text-center">Search Item</h1>
 
   <%= form_with model: @item, url: group_items_path(@group.id), local: true do |f| %>
@@ -76,7 +76,7 @@
 
 
       <%= f.submit "registration" ,class:"btn btn-purple mx-auto d-block w-50" %><br />
-      <%=link_to 'Back', group_items_path(@group.id), class:"btn btn-purple mx-auto d-block w-50" %>
+      <%=link_to 'Back', group_items_path(@group.id), class:"btn btn-purple mx-auto d-block w-50 mb-6" %>
 
   <% end %>
 </div>
