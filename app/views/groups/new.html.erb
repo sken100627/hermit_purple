@@ -1,4 +1,4 @@
-<div class="form-group-create w-100 m-auto mt-5">
+<div class="form-group-create w-100 m-auto mt-2">
   <h1 class="fs-1 mb-5 fw-normal text-center">Create Group</h1>
 
   <%= form_with model: @group, url: groups_path, local: true do |f| %>
@@ -30,12 +30,12 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :group_image, id:"group-image" %>
+        <%= f.file_field :group_image, id:"formFile", class:"form-control" %>
       </div>
     </div>
 
       <%= f.submit "Create Group" ,class:"btn btn-purple mx-auto d-block w-50" %><br />
-      <%=link_to 'Back', root_path, class:"btn btn-purple mx-auto d-block w-50" %>
+      <%=link_to 'Back', root_path, class:"btn btn-purple mx-auto mb-6 d-block w-50" %>
 
   <% end %>
 </div>

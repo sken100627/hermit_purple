@@ -234,3 +234,22 @@ body {
   background-color: #FFFF00;
   transform: skewY(-10deg);
 }
+
+.form-control {
+  font-size: 0.9em !important;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+
+.h-20 {
+  height: 8% !important;
+}
+
+.mb-6 {
+  margin-bottom: 4rem !important;
+}
