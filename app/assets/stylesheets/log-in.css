@@ -234,3 +234,7 @@ body {
   background-color: #FFFF00;
   transform: skewY(-10deg);
 }
+
+.form-control {
+  font-size: 0.9em !important;
+}

@@ -23,9 +23,9 @@
           クリックしてファイルをアップロード
         </p>
         <small>画像</small>
-        <%= f.file_field :item_image, id:"group-image" %>
+        <%= f.file_field :item_image, id:"formFile", class:"form-control" %>
         <small>PDF</small>
-        <%= f.file_field :pdf, id:"group-image" %>
+        <%= f.file_field :pdf, id:"formFile", class:"form-control" %>
       </div>
     </div>
 
@@ -62,7 +62,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :storage_image, id:"group-image" %>
+        <%= f.file_field :storage_image, id:"formFile", class:"form-control" %>
       </div>
     </div>
 
