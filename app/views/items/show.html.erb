@@ -15,7 +15,7 @@
       <%= f.submit "変更" ,class:"btn btn-purple w-25 mb-1" %>
     <% end %>
     <div class="mb-2">
-      <%=link_to '使用開始', "/groups/#{@group.id}/items/#{@item.id}/use", class:"btn btn-purple w-25" %>
+      <%=link_to '使用開始', "/groups/#{@group.id}/items/#{@item.id}/use", class:"btn btn-purple w-25 start-button", data: { item_id: @item.id } %>
       <%=link_to '使用終了', "/groups/#{@group.id}/items/#{@item.id}/back", class:"btn btn-purple w-25" %>
     </div>
     <% if @item.item_image.present? %>

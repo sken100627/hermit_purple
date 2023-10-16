@@ -1,12 +1,12 @@
 html,
 body {
   height: 100%;
-  font-family: 'Dela Gothic One', cursive !important;
+  font-family: 'Dela Gothic One', cursive;
   font-family: 'Chokokutai', cursive;
   font-family: 'Reggae One', cursive;
   font-family: 'Rampart One', cursive;
   font-family: 'Yuji Syuku', serif;
-  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Kosugi Maru', sans-serif !important;
   font-family: 'Shippori Antique B1', sans-serif;
   font-family: 'Mochiy Pop P One', sans-serif;
 }
