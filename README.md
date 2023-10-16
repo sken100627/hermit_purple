@@ -53,61 +53,61 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 ## グループ作成
 
 ### 「Create Group」ボタンからグループ作成画面へ遷移
-[![Image from Gyazo](https://i.gyazo.com/752cf5af8770781f0dd1dcc425bcd57a.png)](https://gyazo.com/752cf5af8770781f0dd1dcc425bcd57a)  
+[![Image from Gyazo](https://i.gyazo.com/355ac3ed2b32828d3459c524ec5bc63c.png)](https://gyazo.com/355ac3ed2b32828d3459c524ec5bc63c)  
 
 
 ### 必要な情報を入力し、グループを作成
-[![Image from Gyazo](https://i.gyazo.com/344bbae48836adabab75233b81c7b99b.gif)](https://gyazo.com/344bbae48836adabab75233b81c7b99b)  
+[![Image from Gyazo](https://i.gyazo.com/e61597b4d579303fe4ffcc14d34d2a79.gif)](https://gyazo.com/e61597b4d579303fe4ffcc14d34d2a79)  
 
 
 ## 探し物登録
 
 ### グループ名またはグループ画像をクリックし、探し物一覧ページへ遷移
-[![Image from Gyazo](https://i.gyazo.com/0090a84b3cd35ac2319c3f4e4fb6c4d2.gif)](https://gyazo.com/0090a84b3cd35ac2319c3f4e4fb6c4d2)  
+[![Image from Gyazo](https://i.gyazo.com/bd486774762fb4f454ca357feffe7b62.gif)](https://gyazo.com/bd486774762fb4f454ca357feffe7b62)  
 
 
 ### 「＋」ボタンから探し物登録ページへ遷移
-[![Image from Gyazo](https://i.gyazo.com/378753cf2b8ace2dce8c1c0d4d93a1d6.gif)](https://gyazo.com/378753cf2b8ace2dce8c1c0d4d93a1d6)  
+[![Image from Gyazo](https://i.gyazo.com/e7e5b74b4789b577286c0b98c5fd34e0.gif)](https://gyazo.com/e7e5b74b4789b577286c0b98c5fd34e0)  
 
 
 ### 必要な情報を入力し、探し物を作成
-[![Image from Gyazo](https://i.gyazo.com/33d9c167d0806be96681d06386b328f5.gif)](https://gyazo.com/33d9c167d0806be96681d06386b328f5)  
+[![Image from Gyazo](https://i.gyazo.com/7972ebd7d2a7d0c3fb870869c3569dc2.gif)](https://gyazo.com/7972ebd7d2a7d0c3fb870869c3569dc2)  
 
 
 ## 探し物詳細ページ
 
 ### 「show」ボタンから探し物詳細ページへ遷移
-[![Image from Gyazo](https://i.gyazo.com/d31d12a6cbf8b2f62d17b23c828c9cca.gif)](https://gyazo.com/d31d12a6cbf8b2f62d17b23c828c9cca)  
+[![Image from Gyazo](https://i.gyazo.com/128b7124f1eef874149e4edd8b9a503b.gif)](https://gyazo.com/128b7124f1eef874149e4edd8b9a503b)  
 
 
 ## 使用中の表示・非表示
 
 ### 使用開始ボタンを押すと使用中表示が出る
-[![Image from Gyazo](https://i.gyazo.com/4ed46f9f107a38eb662de6f9288fa1b3.gif)](https://gyazo.com/4ed46f9f107a38eb662de6f9288fa1b3)  
+[![Image from Gyazo](https://i.gyazo.com/ef18727874facf294b75c9979395328e.gif)](https://gyazo.com/ef18727874facf294b75c9979395328e)  
 
 
 ### 使用終了ボタンを押すと使用中表示が消える
-[![Image from Gyazo](https://i.gyazo.com/1c15bd25c2cacd2039a10af63d4d9aff.gif)](https://gyazo.com/1c15bd25c2cacd2039a10af63d4d9aff)  
+[![Image from Gyazo](https://i.gyazo.com/74e548a5387f41138b204172f7c4db6c.gif)](https://gyazo.com/74e548a5387f41138b204172f7c4db6c)  
 
 
 ## 下限数量を下回ると「発注が必要です」メッセージが表示される
 
 ### 使用した数量分数量を変更
-[![Image from Gyazo](https://i.gyazo.com/97e0270ac35f28e983f3bccf9a9ae672.gif)](https://gyazo.com/97e0270ac35f28e983f3bccf9a9ae672)  
+[![Image from Gyazo](https://i.gyazo.com/a1babb1c8e5ca5a306c847f50bf697fe.gif)](https://gyazo.com/a1babb1c8e5ca5a306c847f50bf697fe)  
 
 
 ### 下限数量を下回るとメッセージ表示
-[![Image from Gyazo](https://i.gyazo.com/6e6d2d37a33e8182dbd5152da1a68a2f.gif)](https://gyazo.com/6e6d2d37a33e8182dbd5152da1a68a2f)  
+[![Image from Gyazo](https://i.gyazo.com/0e6887a5b17207057ba000107dfa50ab.gif)](https://gyazo.com/0e6887a5b17207057ba000107dfa50ab)  
 
 
 ## グループ招待
 
 ### グループ詳細ページよりユーザーを招待
-[![Image from Gyazo](https://i.gyazo.com/ba2651cacbf54e6e9dafdf865cd66a2d.gif)](https://gyazo.com/ba2651cacbf54e6e9dafdf865cd66a2d)  
+[![Image from Gyazo](https://i.gyazo.com/ff78f116c3540f78b5ba170086caaabe.gif)](https://gyazo.com/ff78f116c3540f78b5ba170086caaabe)  
 
 
 ### 招待されたユーザーの通知一覧ページからグループに参加
-[![Image from Gyazo](https://i.gyazo.com/aeecc0624db3453c1feefe00de09cd39.gif)](https://gyazo.com/aeecc0624db3453c1feefe00de09cd39)
+[![Image from Gyazo](https://i.gyazo.com/dbf394bc85495d923d29b9d46c667163.gif)](https://gyazo.com/dbf394bc85495d923d29b9d46c667163)
 
 
 # 実装予定の機能
