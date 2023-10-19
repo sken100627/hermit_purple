@@ -109,6 +109,10 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 ### 招待されたユーザーの通知一覧ページからグループに参加
 [![Image from Gyazo](https://i.gyazo.com/dbf394bc85495d923d29b9d46c667163.gif)](https://gyazo.com/dbf394bc85495d923d29b9d46c667163)
 
+## アプリの使い方
+
+### フッター「？」ボタンより使い方ページに遷移
+[![Image from Gyazo](https://i.gyazo.com/6aa2fcbcaaf9691cd1850a43b4ac28f1.gif)](https://gyazo.com/6aa2fcbcaaf9691cd1850a43b4ac28f1)
 
 # 実装予定の機能
 下限数量を下回った時に、グループ作成者（管理者）に通知を飛ばす。
