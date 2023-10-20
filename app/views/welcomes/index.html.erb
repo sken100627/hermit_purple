@@ -1,39 +1,42 @@
-<h1 class="visually-hidden">Features examples</h1>
-
-  <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom fs-1">このアプリの使い方</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <h3 class="fs-1 text-body-emphasis">家庭や職場の在庫管理はできていますか？</h3>
-        <p class="fs-5">どこに何があるかを明確に管理し、不要な在庫や過剰在庫を未然に防ぎます。</p>
-        <div class="col">
-          <%= image_tag("使い方１.jpg", class:"card card-cover overflow-hidden rounded-4 shadow-lg w-100") %>
-        </div>
-      </div>
-      
-      
-      <div class="feature col">
-        <h3 class="fs-1 text-body-emphasis">グループを作成し、様々な場面で使用することができます。</h3>
-        <div class="col">
-          <%= image_tag("グループ作成画像.png", class:"card card-cover overflow-hidden rounded-4 shadow-lg w-100") %>
-        </div>
-      </div>
-      <div class="feature col">
-        <h3 class="fs-1 text-body-emphasis">グループにユーザーを招待できます。</h3>
-        <%= image_tag("グループ招待.png", class:"card card-cover overflow-hidden rounded-4 shadow-lg w-100") %>
-      </div>
-      <div class="feature col">
-        <h3 class="fs-1 text-body-emphasis">在庫がどこに、どれだけあるか登録できます。</h3>
-        <%= image_tag("探し物詳細.png", class:"card card-cover overflow-hidden rounded-4 shadow-lg w-100") %>
-      </div>
-      <div class="feature col">
-        <h3 class="fs-1 text-body-emphasis">PDFファイルも保存できます。</h3>
-        <p class="fs-5">必要な時に取り出せない取扱説明書などをPDFで保存！</p>
-        <%= image_tag("PDF保存.png", class:"card card-cover overflow-hidden rounded-4 shadow-lg w-100") %>
-      </div>
-      <div class="feature col">
-        <h3 class="fs-1 text-body-emphasis">下限設定をして、在庫不足をお知らせします。</h3>
-        <%= image_tag("在庫不足アラート.png", class:"card card-cover overflow-hidden rounded-4 shadow-lg w-100") %>
-      </div>
+<div class="form-group-create w-100 m-auto mt-1 mb-6">
+  <div class="slider">
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">家や職場の在庫管理<br>できていますか？</h3>
+      <%= image_tag "welcomeトップ.jpg", class: "img border rounded-3 bg-body-tertiary" %>
+    </div>
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">グループ作成</h3>
+    <p class="fs-5 text-center">家庭や職場などの<br>様々なグループで使用できる！</p>
+      <%= image_tag 'グループ作成画像.png', class: "img border rounded-3" %>
+    </div>
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">グループ招待</h3>
+      <%= image_tag 'グループ招待.png', class: "img border rounded-3" %>
+    </div>
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">グループ参加</h3>
+    <p class="fs-5 text-center">通知ページから参加！</p>
+      <%= image_tag 'グループ参加.png', class: "img border rounded-3" %>
+    </div>
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">在庫管理</h3>
+    <p class="fs-5 text-center">探し物が一目でわかる！</p>
+      <%= image_tag '在庫管理.png', class: "img border rounded-3" %>
+    </div>
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">保管場所</h3>
+    <p class="fs-5 text-center">どこに保管したか<br>写真でわかりやすい！</p>
+      <%= image_tag '保管場所管理.png', class: "img border rounded-3" %>
+    </div>
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">在庫不足通知</h3>
+    <p class="fs-5 text-center">在庫不足を未然に防止！</p>
+      <%= image_tag '在庫不足通知.png', class: "img border rounded-3" %>
+    </div>
+    <div class="slider-outer">
+    <h3 class="fs-2 text-body-emphasis text-center text-decoration-underline">PDF保存</h3>
+    <p class="fs-5 text-center">必要な時に取り出せない取扱説明書などをPDFで保存！</p>
+      <%= image_tag 'PDF表示.png', class: "img border rounded-3" %>
     </div>
   </div>
+</div>
