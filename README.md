@@ -119,7 +119,7 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 
 # データベース設計
 
-[![Image from Gyazo](https://i.gyazo.com/73eed3f3b8fd4035677aac628f7f2a7b.png)](https://gyazo.com/73eed3f3b8fd4035677aac628f7f2a7b)
+[![Image from Gyazo](https://i.gyazo.com/4321c8dd392fa2bc2fbdaa92eba29591.png)](https://gyazo.com/4321c8dd392fa2bc2fbdaa92eba29591)
 
 # 画面遷移図
 
@@ -132,6 +132,7 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 ・テキストエディタ  
 ・Ruby  
 ・Ruby on rails  
+・JavaScript  
 ・HTML  
 ・CSS
 
