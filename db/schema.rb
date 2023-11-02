@@ -78,11 +78,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_170507) do
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
     t.bigint "group_id"
+    t.bigint "item_id"
     t.string "action", default: "", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_notifications_on_group_id"
+    t.index ["item_id"], name: "index_notifications_on_item_id"
     t.index ["visited_id"], name: "index_notifications_on_visited_id"
     t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
@@ -109,4 +111,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_170507) do
   add_foreign_key "items", "groups"
   add_foreign_key "items", "users"
   add_foreign_key "notifications", "groups"
+  add_foreign_key "notifications", "items"
 end
