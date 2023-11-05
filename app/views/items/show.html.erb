@@ -18,7 +18,16 @@
       <%=link_to '使用開始', "/groups/#{@group.id}/items/#{@item.id}/use", class:"btn btn-purple w-25 start-button", data: { item_id: @item.id } %>
       <%=link_to '使用終了', "/groups/#{@group.id}/items/#{@item.id}/back", class:"btn btn-purple w-25" %>
     </div>
-    <% if @item.item_image.present? %>
+    <% if @item.item_image.present? && @item.lower.present? && @item.quantity < @item.lower %>
+      <div class="box2">
+        <%= image_tag @item.item_image, class: "mx-auto item-show-icon opacity-50" %>
+        <% if @item.taking == true %>
+          <div class='taking-out text-dark'>
+            <span>使用中</span>
+          </div>
+        <% end %>
+      </div>
+    <% elsif @item.item_image.present? %>
       <div class="box2">
         <%= image_tag @item.item_image, class: "mx-auto item-show-icon" %>
         <% if @item.taking == true %>
