@@ -207,7 +207,7 @@ body {
 }
 
 .futidori {
-  color: #87cefa;
+  color: #f5f107;
   -webkit-text-stroke: 2px #000000;
 }
 
@@ -266,4 +266,12 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 17px;
+}
+
+p.center {
+  width: 300px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: 'Zen Kaku Gothic New', sans-serif !important;
 }

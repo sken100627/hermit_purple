@@ -79,6 +79,12 @@ class ItemsController < ApplicationController
     redirect_to group_items_path(@group.id)
   end
 
+  def shortage
+    @group = Group.find(params[:group_id])
+    @items = @group.items.shortage
+    render :index
+  end
+
   private
 
   def item_params

@@ -27,5 +27,9 @@ class Item < ApplicationRecord
     Item.where('name LIKE(?)', "%#{search}%")
   end
 
+  def self.shortage
+    Item.where("lower > quantity")
+  end
+
 end
 

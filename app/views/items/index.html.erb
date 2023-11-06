@@ -32,6 +32,10 @@
   <%=link_to '+', new_group_item_path(@group.id), class:"btn btn-purple d-block px-4" %>
 </div>
 
+<div class="container mt-1">
+  <%=link_to '在庫不足アイテムのみ表示', shortage_group_items_path(@group.id), class:"btn btn-purple d-block px-4" %>
+</div>
+
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
@@ -41,7 +45,7 @@
           <% if item.item_image.present? && item.lower.present? && item.quantity < item.lower %>
             <div class="box2">
               <%= image_tag item.item_image, class: "bd-placeholder-img card-img-top item-index-icon opacity-25" %>
-              <p class="center">在庫が不足しています</p>
+              <p class="center futidori">在庫が不足しています<br><%= "#{(item.lower) - (item.quantity) }個発注が必要です" %></p>
               <% if item.taking == true %>
                 <div class='taking-out'>
                   <span>使用中</span>
