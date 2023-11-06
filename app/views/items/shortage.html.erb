@@ -6,11 +6,11 @@
         <p><%= @group.introduction %></p>
         <div class="mb-1 text-body-secondary">参加メンバー</div>
         <p>
-        <% unless @group.users.present? %>
-          まだメンバーはいません。
-        <% else %>
-          <% @group.users.each do |member| %>
-              <%= member.nickname %>
+          <% unless @group.users.present? %>
+            まだメンバーはいません。
+          <% else %>
+            <% @group.users.each do |member| %>
+                <%= member.nickname %>　
             <% end %>
           <% end %>
         </p>
@@ -33,7 +33,7 @@
 </div>
 
 <div class="container mt-1">
-  <%=link_to '在庫不足アイテムのみ表示', shortage_group_items_path(@group.id), class:"btn btn-purple d-block px-4" %>
+  <%=link_to '在庫不足アイテムのみ表示', shortage_group_items_path(@group.id) class:"btn btn-purple d-block px-4" %>
 </div>
 
 <div class="album py-5 bg-body-tertiary">
@@ -42,7 +42,28 @@
       <% @items.each do |item| %>
         <div class="col">
           <div class="card shadow-sm">
-            <%= image_tag item.item_image, class: "bd-placeholder-img card-img-top item-index-icon" %>
+          <% if item.item_image.present? && item.lower.present? && item.quantity < item.lower %>
+            <div class="box2">
+              <%= image_tag item.item_image, class: "bd-placeholder-img card-img-top item-index-icon opacity-25" %>
+              <p class="center futidori">在庫が不足しています</p>
+              <% if item.taking == true %>
+                <div class='taking-out'>
+                  <span>使用中</span>
+                </div>
+              <% end %>
+            </div>
+          <% elsif item.item_image.present? %>
+            <div class="box2">
+              <%= image_tag item.item_image, class: "bd-placeholder-img card-img-top item-index-icon" %>
+              <% if item.taking == true %>
+                <div class='taking-out'>
+                  <span>使用中</span>
+                </div>
+              <% end %>
+            </div>
+          <% elsif item.pdf.present? %>
+            <%= image_tag "PDF.jpg", class: "bd-placeholder-img card-img-top item-index-icon" %>
+          <% end %>
             <div class="card-body">
               <p class="card-text"><%= item.name %></p>
               <div class="d-flex justify-content-between align-items-center">

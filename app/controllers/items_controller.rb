@@ -81,12 +81,7 @@ class ItemsController < ApplicationController
 
   def shortage
     @group = Group.find(params[:group_id])
-    @item = Item.find(params[:item_id])
-    @items = if @item.lower.present?
-               Item.where(lower > quantity)
-             else
-               @group.items
-             end
+    @items = @group.items.shortage
     render :index
   end
 
