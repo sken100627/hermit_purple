@@ -32,6 +32,10 @@
   <%=link_to '+', new_group_item_path(@group.id), class:"btn btn-purple d-block px-4" %>
 </div>
 
+<div class="container mt-1">
+  <%=link_to '在庫不足アイテムのみ表示', new_group_item_path(@group.id), class:"btn btn-purple d-block px-4" %>
+</div>
+
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
