@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       end
       get "use" => "items#use"
       get "back" => "items#back"
+      get "shortage" => "items#shortage"
     end
   end
   resources :notifications, only: :index
