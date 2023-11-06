@@ -79,6 +79,17 @@ class ItemsController < ApplicationController
     redirect_to group_items_path(@group.id)
   end
 
+  def shortage
+    @group = Group.find(params[:group_id])
+    @item = Item.find(params[:item_id])
+    @items = if @item.lower.present?
+               Item.where(lower > quantity)
+             else
+               @group.items
+             end
+    render :index
+  end
+
   private
 
   def item_params
