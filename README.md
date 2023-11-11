@@ -99,6 +99,12 @@ https://docs.google.com/spreadsheets/d/18y9kkBOb-ywruQkhjU3PtNsMswPZtWfoF9fqaG65
 ### 下限数量を下回るとメッセージ表示
 [![Image from Gyazo](https://i.gyazo.com/0e6887a5b17207057ba000107dfa50ab.gif)](https://gyazo.com/0e6887a5b17207057ba000107dfa50ab)  
 
+[![Image from Gyazo](https://i.gyazo.com/e3b18fb2c4f23faa119e430c538c3711.gif)](https://gyazo.com/e3b18fb2c4f23faa119e430c538c3711)  
+
+
+### 在庫不足アイテム絞り込み表示
+[![Image from Gyazo](https://i.gyazo.com/413289fca9f324ec8b00379c985d6dff.gif)](https://gyazo.com/413289fca9f324ec8b00379c985d6dff)
+
 
 ## グループ招待
 
